@@ -1,0 +1,1106 @@
+
+/*COMENTARIOS*/
+
+/*Agrupe lo mas que pude propiedades en comun a muchos elementos para reutilizarlas y solo definir las propiedades especificas de cada producto. 
+Use muchas veces DIV donde deberia ir IMG por que le tenia que dar un source obligadamente para que se ve vea maquetado, asi que por motivos de visualizacion use DIVS*/
+
+/*RESETEO DEL NAVEGADOR*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+/*GLOBALES ------------------------------------------------------------------------------------------------*/
+.redondeado{
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+}
+
+/*HEADER ------------------------------------------------------------------------------------------------*/
+
+/*BARRA SUPERIOR PARA COMUNICAR DESCUENTOS, BENEFICIOS*/
+.barramensaje {
+    z-index: 1;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/*MENU RESPONSIVE*/
+.navbar{
+    z-index: 1;
+    display: flex;
+    position: fixed;
+    width:100%;
+    top:45px;
+    padding: 0px;
+    background-color: white;
+}    
+
+.container-fluid{
+    padding: 0px;
+    width: calc(100% - 30px);
+    background-color: #fcfcfc;
+}
+
+.logoycarro{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-areas: "logo none carro";
+    width: calc(50% + 25px);
+    padding: 0px;
+    margin:0px;
+}
+
+.logo{
+    grid-area: logo;
+    height: 50px;
+}
+
+.carro{
+    grid-area: carro;
+    height: 50px;
+}
+
+.carroDesktop{
+    display:none;
+}
+
+.active{
+    background-color: rgb(255, 239, 239);
+    box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+    border-radius: 2px;
+}
+
+.show .active, .collapsing .active{
+    background-color: white;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);;
+    border-radius: 0px;
+    font-weight: 500;
+}
+
+/*FOOTER*/
+.footer {
+    display: grid;
+    position:relative;
+    font-size: 24px;
+    grid-template-rows: 100px 100px;
+    grid-template-areas: "logo"
+                        "redessociales";
+    top:90px;
+    height: 200px;
+    width: 100%;
+    background-color: black;
+    
+}
+
+.logoFooter {
+    margin: auto auto;
+    width: 80px;
+    grid-area: logo;
+    background-color: transparent;
+}
+
+.RedesFooter {
+    margin: auto auto;
+    width: 80px;
+    grid-area: redessociales;
+}
+
+.containerGridsProduct {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*MAIN---------------------------------------------------------------------------------------------------------------*/
+
+/*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+.contenedorMain {
+    display: grid;
+    position: relative;
+    top: 95px;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-rows: auto 100px auto 80px auto 80px auto 80px 0px auto 150px 40px 50px auto 40px;
+    gap: none;
+    grid-template-areas: "paddingleft portada paddingright"
+                         "paddingleft titulocolecciones paddingright"
+                         "paddingleft imagencoleccion1 paddingright"
+                         "paddingleft titulocoleccion1 paddingright"
+                         "paddingleft imagencoleccion2 paddingright"
+                         "paddingleft titulocoleccion2 paddingright"
+                         "paddingleft imagencoleccion3 paddingright"
+                         "paddingleft titulocoleccion3 paddingright"
+                         "paddingleft vacio1 paddingright"
+                         "paddingleft textocalidad paddingright"
+                         "paddingleft imagencalidad paddingright"
+                         "paddingleft vacio2 paddingright"
+                         "paddingleft ourCommunity paddingright"
+                         "paddingleft fotosuso paddingright"
+                         "paddingleft vacio3 paddingright"
+}
+
+.portadaMobile {
+    display: flex;
+    width: 100%;
+    grid-area: portada;
+}
+
+.portadaTablet {
+    display:none;
+    width: 100%;
+    grid-area: portada;
+}
+
+.portadaDesktop {
+    display:none;
+    width: 100%;
+    grid-area: portada;
+}
+
+.titulocolecciones {
+    font-size: 40px;
+    text-align: center;
+    margin: 50px auto;
+    grid-area: titulocolecciones;
+}
+
+.titulocoleccion1{
+    grid-area: titulocoleccion1;
+}
+
+.imagencoleccion1{
+    grid-area: imagencoleccion1; 
+}
+
+.titulocoleccion2{
+    grid-area: titulocoleccion2;
+}
+.imagencoleccion2{
+    grid-area: imagencoleccion2;    
+}
+
+.titulocoleccion3{
+    grid-area: titulocoleccion3;
+}
+
+.imagencoleccion3{
+    grid-area: imagencoleccion3;
+}
+
+.coleccionesImagenes{
+    width: 100%;
+    max-width: 450px;
+    margin:auto;
+}
+
+.coleccionesTexto{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:10px;
+    font-size: 24px;
+}
+
+.coleccionesTexto:visited{
+    color:black;
+}
+
+.textoCalidad {
+    overflow: hidden;
+    margin:auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    grid-area: textocalidad;
+}
+
+.imagenCalidad {
+    display:block;
+    margin:auto;
+    font-size: 24px;
+    width: 250px;
+    grid-area: imagencalidad;
+}
+
+.ourCommunity{
+    margin: auto;
+    grid-area: ourCommunity;
+}
+
+.sliderFotosdeUso {
+    display:flex;
+    font-size: 24px;
+    width:100%;
+    grid-area: fotosuso;
+}
+
+.fotosdeUso1, .fotosdeUso2, .fotosdeUso3, .fotosdeUso4, .fotosdeUso5, .fotosdeUso6, .fotosdeUso7, .fotosdeUso8{
+    display:none;
+    width:100%;
+}
+.fotosdeUso1{
+    grid-area: fotosuso1;
+}
+
+.fotosdeUso2{
+    grid-area: fotosuso2;
+}
+
+.fotosdeUso3{
+    grid-area: fotosuso3;
+}
+
+.fotosdeUso4{
+    grid-area: fotosuso4;
+}
+
+.fotosdeUso5{
+    grid-area: fotosuso5;
+}
+
+.fotosdeUso6{
+   
+    grid-area: fotosuso6;
+}
+
+.fotosdeUso7{
+    grid-area: fotosuso7;
+}
+
+.fotosdeUso8{
+    grid-area: fotosuso8;
+}
+
+/*PAGINA PRODUCTO--------------------------------------------------------------------------------*/
+
+/*NAVEGAR ENTRE IMAGENES*/
+.carruselDeImagenes {
+    display: grid;
+    position: relative;
+    width: 740px;
+    height: 680px;
+    top: 115px;
+    grid-template-rows: 400px 280px;
+    grid-template-columns: 50px repeat(4, 160px) 50px;
+    grid-template-areas: "sideizquierdo imagenprincipal imagenprincipal imagenprincipal imagenprincipal sidederecho"
+        "vacio1 miniatura1 miniatura2 miniatura3 miniatura4 vacio2"
+    ;
+}
+
+.imagenPrincipal {
+    font-size: 24px;
+    width: 288px;
+    height: 377px;
+    grid-area: imagenprincipal;
+}
+
+.miniatura {
+    font-size: 24px;
+    width: 150px;
+    height: 200px;
+}
+
+.miniatura1 {
+    grid-area: miniatura1;
+}
+
+.miniatura2 {
+    grid-area: miniatura2;
+}
+
+.miniatura3 {
+    grid-area: miniatura3;
+}
+
+.miniatura4 {
+    grid-area: miniatura4;
+}
+
+.flechaDerecha {
+    width: 40px;
+    grid-area: sidederecho;
+    margin: auto auto;
+}
+
+.flechaIzquierda {
+    width: 40px;
+    grid-area: sideizquierdo;
+    margin: auto auto;
+}
+
+/*INTERACCION Y DESCRIPCION DEL PRODUCTO*/
+.descripcionProducto {
+    display: grid;
+    position: relative;
+    width: 415px;
+    height: 680px;
+    top: 115px;
+    grid-template-rows: 25px 35px 25px 35px 25px 77px 25px 53px 25px 355px;
+    grid-template-columns: 415px;
+    grid-template-areas: "vacio1"
+        "titulo"
+        "vacio2"
+        "precio"
+        "vacio3"
+        "politicas"
+        "vacio4"
+        "boton"
+        "vacio5"
+        "descripcion";
+}
+
+.tituloProducto {
+    font-size: 24px;
+    margin: 0 auto;
+    margin-left: 20px;
+    grid-area: titulo;
+}
+
+.precio {
+    font-size: 24px;
+    margin: 0 auto;
+    margin-left: 20px;
+    grid-area: precio;
+}
+
+.politicas {
+    font-size: 24px;
+    width: 310px;
+    height: 78px;
+    grid-area: politicas;
+}
+
+.botonATC {
+    font-size: 24px;
+    width: 360px;
+    height: 53px;
+    grid-area: boton;
+}
+
+.descripcion {
+    font-size: 24px;
+    width: 360px;
+    height: 280px;
+    grid-area: descripcion;
+}
+
+/*PAGINA NEW ARRIVAL Y COLECCIONES ------------------------------------------------------------*/
+
+
+.contenedorCards {
+    display: grid;
+    position: relative;
+    top: 95px;
+    width: 360px;
+    margin: 0 auto;
+    grid-template-columns:15px 150px 150px 15px;
+    grid-template-rows: 30px 210px 210px 210px 210px 50px;
+    gap:10px;
+    grid-template-areas: "titulo titulo titulo titulo"
+        "paddingleft card1 card2 paddingright"
+        "paddingleft card3 card4 paddingright"
+        "paddingleft card5 card6 paddingright"
+        "paddingleft card7 card8 paddingright"
+        "paddingleft vacio1 vacio1 paddingright";
+}
+
+.tituloNewArrival {
+    grid-area: titulo;
+    margin: auto;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 30px 30px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+
+
+
+.card1 {
+    grid-template-areas: "foto1"
+                         "titulo1"   
+                         "precio1";
+    grid-area: card1;
+}
+
+.imagenCard1{
+    width:100%;
+    grid-area: foto1;
+}
+
+.tituloCard1{
+    margin:auto;
+    grid-area: titulo1;
+}
+
+.precioCard1{
+    margin:auto;
+    grid-area: precio1;
+}
+
+.card2{
+    grid-template-areas: "foto2"
+                         "titulo2"   
+                         "precio2";
+    grid-area: card2;
+}
+
+.imagenCard2{
+    width:100%;
+    grid-area: foto2;
+}
+
+.tituloCard2{
+    margin:auto;
+    grid-area: titulo2;
+}
+
+.precioCard2{
+    margin:auto;
+    grid-area: precio2;
+}
+
+.card3{
+    grid-template-areas: "foto3"
+                         "titulo3"   
+                         "precio3";
+    grid-area: card3;
+}
+
+.imagenCard3{
+    width:100%;
+    grid-area: foto3;
+}
+
+.tituloCard3{
+    margin:auto;
+    grid-area: titulo3;
+}
+
+.precioCard3{
+    margin:auto;
+    grid-area: precio3;
+}
+
+.card4 {
+    grid-template-areas: "foto4"
+                         "titulo4"   
+                         "precio4";
+    grid-area: card4;
+}
+
+.imagenCard4{
+    width:100%;
+    grid-area: foto4;
+}
+
+.tituloCard4{
+    margin:auto;
+    grid-area: titulo4;
+}
+
+.precioCard4{
+    margin:auto;
+    grid-area: precio4;
+}
+
+.card5{
+    grid-template-areas: "foto5"
+                         "titulo5"   
+                         "precio5";
+    grid-area: card5;
+}
+
+.imagenCard5{
+    width:100%;
+    grid-area: foto5;
+}
+
+.tituloCard5{
+    margin:auto;
+    grid-area: titulo5;
+}
+
+.precioCard5{
+    margin:auto;
+    grid-area: precio5;
+}
+
+.card6{
+    grid-template-areas: "foto6"
+                         "titulo6"   
+                         "precio6";
+    grid-area: card6;
+}
+
+.imagenCard6{
+    width:100%;
+    grid-area: foto6;
+}
+
+.tituloCard6{
+    margin:auto;
+    grid-area: titulo6;
+}
+
+.precioCard6{
+    margin:auto;
+    grid-area: precio6;
+}
+
+.card7 {
+    grid-template-areas: "foto7"
+                         "titulo7"   
+                         "precio7";
+    grid-area: card7;
+}
+
+.imagenCard7{
+    width:100%;
+    grid-area: foto7;
+}
+
+.tituloCard7{
+    margin:auto;
+    grid-area: titulo7;
+}
+
+.precioCard7{
+    margin:auto;
+    grid-area: precio7;
+}
+
+.card8 {
+    grid-template-areas: "foto8"
+                         "titulo8"   
+                         "precio8";
+    grid-area: card8;
+}
+
+.imagenCard8{
+    width:100%;
+    grid-area: foto8;
+}
+
+.tituloCard8{
+    margin:auto;
+    grid-area: titulo8;
+}
+
+.precioCard8{
+    margin:auto;
+    grid-area: precio8;
+}
+
+.card9{
+    display: none;
+    grid-template-areas: "foto9"
+                         "titulo9"   
+                         "precio9";
+    grid-area: card9;
+}
+
+.imagenCard9{
+    width:100%;
+    grid-area: foto9;
+}
+
+.tituloCard9{
+    margin:auto;
+    grid-area: titulo9;
+}
+
+.precioCard9{
+    margin:auto;
+    grid-area: precio9;
+}
+
+.card10{
+    display: none;
+    grid-template-areas: "foto10"
+                         "titulo10"   
+                         "precio10";
+    grid-area: card10;
+}
+
+.imagenCard10{
+    width:100%;
+    grid-area: foto10;
+}
+
+.tituloCard10{
+    margin:auto;
+    grid-area: titulo10;
+}
+
+.precioCard10{
+    margin:auto;
+    grid-area: precio10;
+}
+
+.card11{
+    display: none;
+    grid-template-areas: "foto11"
+                         "titulo11"   
+                         "precio11";
+    grid-area: card11;
+}
+
+.imagenCard11{
+    width:100%;
+    grid-area: foto11;
+}
+
+.tituloCard11{
+    margin:auto;
+    grid-area: titulo11;
+}
+
+.precioCard11{
+    margin:auto;
+    grid-area: precio11;
+}
+
+.card12{
+    display: none;
+    grid-template-areas: "foto12"
+                         "titulo12"   
+                         "precio12";
+    grid-area: card12;
+}
+
+.imagenCard12{
+    width:100%;
+    grid-area: foto12;
+}
+
+.tituloCard12{
+    margin:auto;
+    grid-area: titulo12;
+}
+
+.precioCard12{
+    margin:auto;
+    grid-area: precio12;
+}
+
+.card13{
+    display: none;
+    grid-template-areas: "foto13"
+                         "titulo13"   
+                         "precio13";
+    grid-area: card13;
+}
+
+.imagenCard13{
+    width:100%;
+    grid-area: foto13;
+}
+
+.tituloCard13{
+    margin:auto;
+    grid-area: titulo13;
+}
+
+.precioCard13{
+    margin:auto;
+    grid-area: precio13;
+}
+
+.card14{
+    display: none;
+    grid-template-areas: "foto14"
+                         "titulo14"   
+                         "precio14";
+    grid-area: card14;
+}
+
+.imagenCard14{
+    width:100%;
+    grid-area: foto14;
+}
+
+.tituloCard14{
+    margin:auto;
+    grid-area: titulo14;
+}
+
+.precioCard14{
+    margin:auto;
+    grid-area: precio14;
+}
+
+.card15{
+    display: none;
+    grid-template-areas: "foto15"
+                         "titulo15"   
+                         "precio15";
+    grid-area: card15;
+}
+
+.imagenCard15{
+    width:100%;
+    grid-area: foto15;
+}
+
+.tituloCard15{
+    margin:auto;
+    grid-area: titulo15;
+}
+
+.precioCard15{
+    margin:auto;
+    grid-area: precio15;
+}
+
+.card16{
+    display: none;
+    grid-template-areas: "foto16"
+                         "titulo16"   
+                         "precio16";
+    grid-area: card16;
+}
+
+.imagenCard16{
+    width:100%;
+    grid-area: foto16;
+}
+
+.tituloCard16{
+    margin:auto;
+    grid-area: titulo16;
+}
+
+.precioCard16{
+    margin:auto;
+    grid-area: precio16;
+}
+
+/*PAGINA ABOUT US------------------------------------------------------------------------------------------*/
+.mainAboutUs {
+    display: grid;
+    position: relative;
+    top: 95px;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-rows: 50px 200px 200px;
+    grid-template-areas: "paddingleft titulo paddingright"
+                         "paddingleft texto paddingright"
+                         "paddingleft imagen paddingright";
+}
+
+.tituloAboutUs {
+    margin: auto;
+    overflow: hidden;
+    grid-area: titulo;
+}
+
+.textoAboutUs {
+    margin: auto;
+    font-size: 18px;
+    text-align: justify;
+    grid-area: texto;
+}
+
+.imagenFundadores {
+    margin: auto;
+    font-size: 18px;
+    grid-area: imagen;
+}
+
+/*PAGINA COONTACT US-------------------------------------------------------------------------------------------------*/
+.mainContactUs {
+    display: grid;
+    position: relative;
+    top: 95px;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-rows: 50px 200px 200px;
+    grid-template-areas: "paddingleft titulo paddingright"
+                         "paddingleft texto paddingright"
+                         "paddingleft imagen paddingright";
+}
+
+.tituloContactUs {
+    margin: auto;
+    overflow: hidden;
+    grid-area: titulo;
+}
+
+.textoContactUs {
+    margin: auto;
+    font-size: 18px;
+    text-align: justify;
+    grid-area: texto;
+}
+
+
+/*PAGINA OUR CONTRIBUTION------------------------------------------------------------------------------------------------------*/
+.mainOurContribution {
+    display: grid;
+    position: relative;
+    top: 95px;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-rows: 50px 200px 200px;
+    grid-template-areas: "paddingleft titulo paddingright"
+                         "paddingleft texto paddingright"
+                         "paddingleft imagen paddingright";
+}
+
+.tituloOurContribution {
+    margin: auto;
+    overflow: hidden;
+    grid-area: titulo;
+}
+
+.textoOurContribution {
+    margin: auto;
+    font-size: 18px;
+    text-align: justify;
+    grid-area: texto;
+}
+
+.imagenOurContribution {
+    margin: auto;
+    font-size: 18px;
+    grid-area: imagen;
+}
+
+/*-------------------------------------------------------------------MEDIA QUERIES-----------------------------------------------------------*/
+    
+
+@media screen and (min-width: 576px){
+/*BARRA SUPERIOR PARA COMUNICAR DESCUENTOS, BENEFICIOS*/
+.barramensaje {
+    font-size: 16px;
+}
+}
+
+@media screen and (min-width: 768px){
+/*BARRA SUPERIOR PARA COMUNICAR DESCUENTOS, BENEFICIOS*/
+.barramensaje {
+    font-size: 18px;
+}
+    
+/*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+.contenedorMain {
+    grid-template-columns: 15px 1fr 1fr 15px;
+    grid-template-rows: auto 100px auto 80px auto 80px auto 80px 20px 140px 20px 50px 1fr 1fr 40px;
+    gap: 10px;
+    grid-template-areas: "portada portada portada portada"
+                         "paddingleft titulocolecciones titulocolecciones paddingright"
+                         "paddingleft imagencoleccion1 imagencoleccion1 paddingright"
+                         "paddingleft titulocoleccion1 titulocoleccion1 paddingright"
+                         "paddingleft imagencoleccion2 imagencoleccion2 paddingright"
+                         "paddingleft titulocoleccion2 titulocoleccion2 paddingright"
+                         "paddingleft imagencoleccion3 imagencoleccion3 paddingright"
+                         "paddingleft titulocoleccion3 titulocoleccion3 paddingright"
+                         "paddingleft vacio1 vacio1 paddingright"
+                         "paddingleft imagencalidad textocalidad paddingright"
+                         "paddingleft vacio2 vacio2 paddingright"
+                         "paddingleft ourCommunity ourCommunity paddingright"
+                         "paddingleft fotosuso1 fotosuso2 paddingright"
+                         "paddingleft fotosuso3 fotosuso4 paddingright"
+                         "paddingleft vacio3 vacio3 paddingright"
+}
+    
+.portadaMobile {
+    display: none;
+}
+
+.portadaTablet {
+    display:flex;
+}
+
+.sliderFotosdeUso {
+    display:none;
+}
+    
+.fotosdeUso1{
+    display:flex;
+}
+    
+.fotosdeUso2{
+    display:flex;
+}
+    
+.fotosdeUso3{
+    display:flex;
+}
+    
+.fotosdeUso4{
+    display:flex;
+}
+
+
+/*MEDIA QUERY 1 NEW ARRIVALS Y COLLECTIONS*/
+.contenedorCards {
+    grid-template-columns:20px 150px 150px 150px 20px;
+    grid-template-rows: 30px 210px 210px 210px 210px 50px;
+    grid-template-areas: "titulo titulo titulo titulo titulo"
+        "paddingleft card1 card2 card3 paddingright"
+        "paddingleft card4 card5 card6 paddingright"
+        "paddingleft card7 card8 card9 paddingright"
+        "paddingleft card10 card11 card12 paddingright"
+        "paddingleft vacio1 vacio1 vacio1 paddingright";
+    width: 730px;
+    gap:60px;
+}
+
+.card9{
+    display:grid;
+}
+
+.card10{
+    display:grid;
+}
+
+.card11{
+    display:grid;
+}
+
+.card12{
+    display:grid;
+}
+}
+
+@media screen and (min-width: 992px){
+/*MEDIA QUERY 3 DE HOME*/
+.logoycarro{
+    display: flex;
+    width: fit-content;
+    padding: 0px;
+    margin:0px;
+}
+
+.carro{
+    display:none
+}
+
+.carroDesktop{
+    display: flex;
+    width:50px;
+}
+
+/*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+.contenedorMain {
+    grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    grid-template-rows: auto 100px auto 40px 40px 150px 40px 50px 1fr 1fr 40px;
+    gap: 10px;
+    grid-template-areas: "portada portada portada portada portada portada portada portada"
+                         "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright"
+                         "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 paddingright"
+                         "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 paddingright"
+                         "paddingleft vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 paddingright"
+                         "paddingleft imagencalidad imagencalidad imagencalidad textocalidad textocalidad textocalidad paddingright"
+                         "paddingleft vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 paddingright"
+                         "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright"
+                         "paddingleft fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso3 fotosuso3 paddingright"
+                         "paddingleft fotosuso4 fotosuso4 fotosuso5 fotosuso5 fotosuso6 fotosuso6 paddingright"
+                         "paddingleft vacio3 vacio3 vacio3 vacio3 vacio3 vacio3 paddingright"
+}
+        
+
+.portadaTablet {
+    display: none;
+}
+
+.portadaDesktop {
+    display:flex;
+}
+  
+.fotosdeUso5{
+    display:flex;
+}
+        
+.fotosdeUso6{
+    display:flex;
+}
+}
+
+
+@media screen and (min-width: 1200px){
+/*MEDIA QUERY 4 DE HOME*/    
+/*CONTENEDOR GRID PARA LA SECCION MAIN DE LA HOME MOBILE*/
+          
+.contenedorMain {
+    max-width: 1200px;
+    grid-template-columns: 30px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 30px;
+    grid-template-rows: auto 100px auto 40px 250px 40px 50px 1fr 1fr 40px;
+    gap: 10px;
+    grid-template-areas: "portada portada portada portada portada portada portada portada portada portada portada portada portada portada"
+                         "paddingleft titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones titulocolecciones paddingright"
+                         "paddingleft imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion1 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion2 imagencoleccion3 imagencoleccion3 imagencoleccion3 imagencoleccion3 paddingright"
+                         "paddingleft titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion1 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion2 titulocoleccion3 titulocoleccion3 titulocoleccion3 titulocoleccion3 paddingright"
+                         "paddingleft imagencalidad imagencalidad imagencalidad imagencalidad imagencalidad imagencalidad textocalidad textocalidad textocalidad textocalidad textocalidad textocalidad paddingright"
+                         "paddingleft vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 vacio1 paddingright"
+                         "paddingleft ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity ourCommunity paddingright"
+                         "paddingleft fotosuso1 fotosuso1 fotosuso1 fotosuso2 fotosuso2 fotosuso2 fotosuso3 fotosuso3 fotosuso3 fotosuso4 fotosuso4 fotosuso4 paddingright"
+                         "paddingleft fotosuso5 fotosuso5 fotosuso5 fotosuso6 fotosuso6 fotosuso6 fotosuso7 fotosuso7 fotosuso7 fotosuso8 fotosuso8 fotosuso8 paddingright"
+                         "paddingleft vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 vacio2 paddingright"
+}
+
+.fotosdeUso7{
+    display:flex;
+}
+        
+.fotosdeUso8{
+    display:flex;
+}
+        
+/*MEDIA QUERY 2 NEW ARRIVALS Y COLLECTIONS*/
+.contenedorCards {
+    grid-template-columns:20px 150px 150px 150px 150px 20px;
+    grid-template-rows: 30px 210px 210px 210px 210px 30px;
+    grid-template-areas: "titulo titulo titulo titulo titulo titulo"
+        "paddingleft card1 card2 card3 card4 paddingright"
+        "paddingleft card5 card6 card7 card8 paddingright"
+        "paddingleft card9 card10 card11 card12 paddingright"
+        "paddingleft card13 card14 card15 card16 paddingright"
+        "paddingleft vacio1 vacio1 vacio1 vacio1 paddingright";
+    width: 940px;
+    gap:60px;
+}
+    
+    
+.card13{
+    display:grid;
+}
+
+.card14{
+    display:grid;
+}
+
+.card15{
+    display:grid;
+}
+
+.card16{
+    display:grid;
+}
+}
+
+
+
+
